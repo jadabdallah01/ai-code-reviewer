@@ -3,6 +3,9 @@
 $config= require "config.php";
 $apikey= $config['api_key'];
 $severities= $config['severities'];
+$model= $config['model'];
+$apiUrl= $config['api_url'];
+$temperature= $config['temperature'];
 
 header("Content-Type: application/json");
 
@@ -44,12 +47,12 @@ $code
 Return only the JSON array, no explanations.";
 
 
-$url = "https://api.openai.com/v1/chat/completions";
+$url = $apiUrl;
 
 $postData = [
-"model" => "gpt-4",
+"model" => $model,
 "messages" => [ ["role" => "user", "content" => $prompt] ],
-"temperature" => 0
+"temperature" => $temperature
 ];
 
 $options = [
@@ -91,4 +94,3 @@ $review = [
 }
 
 echo json_encode($review);
-?>
