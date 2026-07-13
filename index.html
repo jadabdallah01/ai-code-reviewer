@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Code Reviewer</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <h1>AI Code Reviewer</h1>
+  <p class="sub">Upload a file or paste a snippet — it'll pick whichever one you gave it.</p>
+
+  <div class="panel">
+    <div class="dropzone" id="dropzone">
+      <input type="file" id="fileInput">
+      <div id="dropzoneLabel">Click to choose a file, or drag one here</div>
+      <div class="filename" id="filenameDisplay"></div>
+    </div>
+
+    <div class="or-divider">— or —</div>
+
+    <textarea id="codeInput" placeholder="Paste your code here..."></textarea>
+    <label class="small" for="filenameInput">File name (used only when pasting code)</label>
+    <input type="text" id="filenameInput" placeholder="snippet.py">
+
+    <button id="analyzeBtn">Analyze</button>
+    <div class="error" id="errorBox"></div>
+    <div class="status" id="statusBox"></div>
+  </div>
+
+  <div class="results" id="results"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
